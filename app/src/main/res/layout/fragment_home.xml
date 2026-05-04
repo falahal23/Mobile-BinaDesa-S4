@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- TOOLBAR -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E1E1E"
+        app:title="Dashboard Kebencanaan"
+        app:titleCentered="true"
+        app:titleTextColor="@android:color/white"/>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- GREETING -->
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Halo, Falahal!"
+                android:textColor="#000000"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- SUBTITLE -->
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Pilih menu layanan di bawah ini"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <!-- CARD MENU -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- BUTTON 1 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMenu1"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Bangun Ruang"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        app:backgroundTint="#6C63FF"
+                        app:cornerRadius="14dp" />
+
+                    <!-- BUTTON 2 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMenu2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Dashboard 1"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        app:backgroundTint="#6C63FF"
+                        app:cornerRadius="14dp" />
+
+                    <!-- BUTTON 3 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMenu3"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Dashboard 2"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        app:backgroundTint="#6C63FF"
+                        app:cornerRadius="14dp" />
+
+                    <!-- WEBVIEW -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnWebView"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Web Bina Desa"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        app:backgroundTint="#0F172A"
+                        app:cornerRadius="14dp" />
+
+                    <!-- DIVIDER -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="22dp"
+                        android:background="#DDDDDD" />
+
+                    <!-- LOGOUT -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMenu4"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Logout"
+                        android:textAllCaps="false"
+                        android:textColor="#6C63FF"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        app:strokeColor="#6C63FF"
+                        app:strokeWidth="2dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

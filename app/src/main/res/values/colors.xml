@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PRIMARY -->
+    <color name="colorPrimary">#2C4DA7</color>
+    <color name="colorPrimaryDark">#1F3A7A</color>
+    <color name="colorAccent">#4A7BDF</color>
+    <color name="colorTextDark">#000000</color>
+    <color name="colorTextSubtitle">#757575</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorCardBackground">#FFFFFFFF</color>
+    <color name="colorOverlay">#66000000</color>
+    <color name="colorInputBackground">#F2F2F2</color>
+    <color name="colorDivider">#D1D1D1</color>
+    <color name="ntah">#B0B0B0</color>
+    <color name="birutua">#3F6FD9</color>
+    <color name="colorBackground">#F5F6FA</color>
+
+    <!-- MISSING COLORS -->
+    <color name="marron">#800000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_primary">#3D5AFE</color>
+    <color name="text_secondary">#757575</color>
+    <color name="primary">#7F56D9</color>
+    <color name="gray">#6B7280</color>
+    <color name="google_btn_bg">#F5F5F5</color>
+    <color name="abu">#000000</color>
+    <color name="grey">#E0E0E0</color>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".pertemuan7.SevenActivity">
+
+    <!-- HEADER -->
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disaster Care"
+            android:textColor="@color/colorWhite"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siaga • Cepat • Tanggap"
+            android:textColor="@color/google_btn_bg"
+            android:textSize="16sp"
+            android:layout_marginTop="6dp"/>
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:src="@android:drawable/ic_dialog_alert"
+            app:tint="@color/colorWhite" />
+    </LinearLayout>
+
+    <!-- CARD MENU -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/menuCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="-35dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Kebencanaan"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- BUTTON GEMPA -->
+
+            <Button
+                android:id="@+id/btnGempa"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Informasi Gempa"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/birutua"
+                android:layout_marginBottom="14dp"/>
+
+            <!-- BUTTON BANJIR -->
+
+            <Button
+                android:id="@+id/btnBanjir"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Status Banjir"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:backgroundTint="@color/google_btn_bg"
+                android:layout_marginBottom="14dp"/>
+
+            <!-- BUTTON EVAKUASI -->
+
+            <Button
+                android:id="@+id/btnEvakuasi"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Lokasi Evakuasi"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorAccent"
+                android:layout_marginBottom="14dp"/>
+
+            <!-- BUTTON DARURAT -->
+
+            <Button
+                android:id="@+id/btnDarurat"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Kontak Darurat"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:backgroundTint="@color/grey"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- FOOTER -->
+
+    <TextView
+        android:id="@+id/txtFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tetap Tenang dan Waspada"
+        android:textColor="@color/text_secondary"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

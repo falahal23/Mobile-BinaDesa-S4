@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <!-- Permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FalahalWrold" >
+        <activity
+            android:name=".pertemuan7.SevenActivity"
+            android:exported="false" />
+        <!-- ✅ SPLASH SCREEN (HALAMAN PERTAMA) -->
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.FalahalWrold" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- ❗ SEMUA ACTIVITY LAIN (TANPA LAUNCHER) -->
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan6.MainActivityBinaDesa"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan6.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan3.WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan4.Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan4.Dashbord2"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
