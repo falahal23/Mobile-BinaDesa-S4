@@ -6,8 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.edit
 import com.example.falahal_wrold.databinding.ActivityAuthBinding
-import com.example.falahal_wrold.pertemuan6.MainActivityBinaDesa
+import com.example.falahal_wrold.Home.pertemuan9.pertemuan6.MainActivityBinaDesa
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AuthActivity : AppCompatActivity() {
@@ -30,47 +31,50 @@ class AuthActivity : AppCompatActivity() {
         val pref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         binding.btnSignIn.setOnClickListener {
-            val nama = binding.etNama.text.toString().trim()
-            val noHp = binding.etNoHp.text.toString().trim()
             val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
+
+            // Validasi input kosong
+            if (username.isEmpty() || password.isEmpty()) {
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Peringatan")
+                    .setMessage("Username dan Password tidak boleh kosong!")
+                    .setPositiveButton("OK", null)
+                    .show()
+                return@setOnClickListener
+            }
 
             val savedUser = pref.getString("saved_username", "")
             val savedPass = pref.getString("saved_password", "")
 
-            val isRule1 = (username == password && username.isNotEmpty())
-            val isRule2 = (username == savedUser && password == savedPass && username.isNotEmpty())
+            // Kondisi 1: Bypass jika username sama dengan password (untuk testing awal)
+            val isRule1 = (username == password)
+            // Kondisi 2: Login dengan data yang sudah terdaftar di SharedPreferences
+            val isRule2 = (username == savedUser && password == savedPass)
 
             if (isRule1 || isRule2) {
+                // LOGIKAL LOGIN BERHASIL
                 startActivity(Intent(this, MainActivityBinaDesa::class.java))
                 finish()
             } else {
-                if (noHp.isNotEmpty() && nama.isNotEmpty()) {
-                    if (username == noHp) {
-                        pref.edit().apply {
-                            putString("saved_nama", nama)
-                            putString("saved_nohp", noHp)
-                            putString("saved_username", username)
-                            putString("saved_password", password)
-                            apply()
-                        }
-
-                        MaterialAlertDialogBuilder(this)
-                            .setTitle("Registrasi Berhasil")
-                            .setMessage("Data disimpan. Silahkan login kembali.")
-                            .setPositiveButton("OK", null)
-                            .show()
-                    } else {
-                        MaterialAlertDialogBuilder(this)
-                            .setTitle("Error OTP")
-                            .setMessage("Inputan username harus sama dengan nomor HP untuk verifikasi!")
-                            .setPositiveButton("OK", null)
-                            .show()
+                // LENGKAH REGISTRASI OTOMATIS
+                // Jika belum ada user terdaftar, daftarkan inputan ini sebagai user baru
+                if (savedUser.isNullOrEmpty()) {
+                    pref.edit {
+                        putString("saved_username", username)
+                        putString("saved_password", password)
                     }
+
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Registrasi Berhasil")
+                        .setMessage("Akun Anda telah didaftarkan. Silakan klik tombol kembali untuk masuk.")
+                        .setPositiveButton("OK", null)
+                        .show()
                 } else {
+                    // Jika sudah ada akun terdaftar tapi inputan salah
                     MaterialAlertDialogBuilder(this)
                         .setTitle("Login Gagal")
-                        .setMessage("Kredensial salah atau data tidak lengkap")
+                        .setMessage("Username atau Password salah!")
                         .setPositiveButton("OK", null)
                         .show()
                 }

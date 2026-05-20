@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Saat dipilih -->
+    <item
+        android:color="#0B4F6C"
+        android:state_selected="true"/>
+
+    <!-- Default -->
+    <item
+        android:color="#7F8C8D"/>
+
+</selector>

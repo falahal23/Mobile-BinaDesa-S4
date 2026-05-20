@@ -1,4 +1,4 @@
-package com.example.falahal_wrold.pertemuan3
+package com.example.falahal_wrold.Home.pertemuan9.pertemuan3
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AlertDialog
 import com.example.falahal_wrold.MainActivity
 import com.example.falahal_wrold.databinding.ActivityWelcomeBinding
-import com.example.falahal_wrold.pertemuan4.Dashboard
-import com.example.falahal_wrold.pertemuan4.Dashbord2
+import com.example.falahal_wrold.Home.pertemuan9.pertemuan4.Dashboard
+import com.example.falahal_wrold.Home.pertemuan9.pertemuan4.Dashboard2
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
@@ -31,7 +31,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         // 🔥 Tombol ke Dashboard 2
         binding.btnDashboard2.setOnClickListener {
-            val intent = Intent(this, Dashbord2::class.java)
+            val intent = Intent(this, Dashboard2::class.java)
             startActivity(intent)
         }
 

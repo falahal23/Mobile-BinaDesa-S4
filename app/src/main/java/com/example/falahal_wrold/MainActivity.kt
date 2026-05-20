@@ -48,12 +48,16 @@ class MainActivity : AppCompatActivity() {
             if (sAlas.isEmpty() || sTinggi.isEmpty()) {
                 Toast.makeText(this, "Alas dan Tinggi harus diisi!", Toast.LENGTH_SHORT).show()
             } else {
-                val alas = sAlas.toDouble()
-                val tinggi = sTinggi.toDouble()
-                val hasil = 0.5 * alas * tinggi
+                val alas = sAlas.toDoubleOrNull()
+                val tinggi = sTinggi.toDoubleOrNull()
 
-                tvHasil.text = "Luas Segitiga: $hasil"
-                Log.d("HASIL_HITUNG", "Menghitung Segitiga: Alas=$alas, Tinggi=$tinggi, Hasil=$hasil")
+                if (alas != null && tinggi != null) {
+                    val hasil = 0.5 * alas * tinggi
+                    tvHasil.text = "Luas Segitiga: $hasil"
+                    Log.d("HASIL_HITUNG", "Menghitung Segitiga: Alas=$alas, Tinggi=$tinggi, Hasil=$hasil")
+                } else {
+                    Toast.makeText(this, "Input tidak valid!", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
@@ -66,13 +70,17 @@ class MainActivity : AppCompatActivity() {
             if (sP.isEmpty() || sL.isEmpty() || sT.isEmpty()) {
                 Toast.makeText(this, "Panjang, Lebar, dan Tinggi Balok harus diisi!", Toast.LENGTH_SHORT).show()
             } else {
-                val p = sP.toDouble()
-                val l = sL.toDouble()
-                val t = sT.toDouble()
-                val hasil = p * l * t
+                val p = sP.toDoubleOrNull()
+                val l = sL.toDoubleOrNull()
+                val t = sT.toDoubleOrNull()
 
-                tvHasil.text = "Volume Balok: $hasil"
-                Log.d("HASIL_HITUNG", "Menghitung Balok: P=$p, L=$l, T=$t, Hasil=$hasil")
+                if (p != null && l != null && t != null) {
+                    val hasil = p * l * t
+                    tvHasil.text = "Volume Balok: $hasil"
+                    Log.d("HASIL_HITUNG", "Menghitung Balok: P=$p, L=$l, T=$t, Hasil=$hasil")
+                } else {
+                    Toast.makeText(this, "Input tidak valid!", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

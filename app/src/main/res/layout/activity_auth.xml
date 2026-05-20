@@ -62,12 +62,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         app:boxBackgroundMode="outline">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etNama"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Nama Lengkap"
-                            android:inputType="textPersonName"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -75,12 +69,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         app:boxBackgroundMode="outline">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etNoHp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Nomor HP"
-                            android:inputType="number"/>
+
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout

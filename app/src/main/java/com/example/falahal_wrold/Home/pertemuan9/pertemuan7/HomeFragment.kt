@@ -1,4 +1,4 @@
-package com.example.falahal_wrold.pertemuan7
+package com.example.falahal_wrold.Home.pertemuan9.pertemuan7
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import com.example.falahal_wrold.AuthActivity
 import com.example.falahal_wrold.MainActivity
 import com.example.falahal_wrold.databinding.FragmentHomeBinding
-import com.example.falahal_wrold.pertemuan4.Dashboard
-import com.example.falahal_wrold.pertemuan4.Dashbord2
-import com.example.falahal_wrold.pertemuan6.WebViewActivity
+import com.example.falahal_wrold.Home.pertemuan9.pertemuan4.Dashboard
+import com.example.falahal_wrold.Home.pertemuan9.pertemuan4.Dashboard2
+import com.example.falahal_wrold.Home.pertemuan9.pertemuan6.WebViewActivity
 
 class HomeFragment : Fragment() {
 
@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
             // BUTTON 3
             btnMenu3.setOnClickListener {
                 startActivity(
-                    Intent(requireActivity(), Dashbord2::class.java)
+                    Intent(requireActivity(), Dashboard2::class.java)
                 )
             }
 

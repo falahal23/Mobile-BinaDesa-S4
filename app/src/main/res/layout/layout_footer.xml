@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/footerMenu"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:elevation="12dp">
+
+    <!-- HOME -->
+    <LinearLayout
+        android:id="@+id/menuHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:id="@+id/iconHome"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/footer_icon_selector"/>
+
+        <TextView
+            android:id="@+id/textHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/footer_text_selector"/>
+
+    </LinearLayout>
+
+    <!-- LAPORAN -->
+    <LinearLayout
+        android:id="@+id/menuLaporan"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:id="@+id/iconLaporan"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_warning"
+            app:tint="@color/footer_icon_selector"/>
+
+        <TextView
+            android:id="@+id/textLaporan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laporan"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/footer_text_selector"/>
+
+    </LinearLayout>
+
+    <!-- LIST -->
+    <LinearLayout
+        android:id="@+id/menuList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:id="@+id/iconList"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_list"
+            app:tint="@color/footer_icon_selector"/>
+
+        <TextView
+            android:id="@+id/textList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/footer_text_selector"/>
+
+    </LinearLayout>
+
+    <!-- ABOUT -->
+    <LinearLayout
+        android:id="@+id/menuAbout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:id="@+id/iconAbout"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_about"
+            app:tint="@color/footer_icon_selector"/>
+
+        <TextView
+            android:id="@+id/textAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/footer_text_selector"/>
+
+    </LinearLayout>
+
+    <!-- PROFILE -->
+    <LinearLayout
+        android:id="@+id/menuProfile"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:id="@+id/iconProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_profile"
+            app:tint="@color/footer_icon_selector" />
+
+        <TextView
+            android:id="@+id/textProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/footer_text_selector"/>
+
+    </LinearLayout>
+
+</LinearLayout>

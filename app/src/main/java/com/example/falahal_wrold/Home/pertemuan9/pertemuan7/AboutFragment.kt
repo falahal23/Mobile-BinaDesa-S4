@@ -1,4 +1,4 @@
-package com.example.falahal_wrold.pertemuan7
+package com.example.falahal_wrold.Home.pertemuan9.pertemuan7
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,18 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.falahal_wrold.R
-import com.example.falahal_wrold.databinding.FragmentProfileBinding
+import com.example.falahal_wrold.databinding.FragmentAboutBinding
 
-class ProfileFragment : Fragment() {
+class AboutFragment : Fragment() {
 
-    private var _binding: FragmentProfileBinding? = null
+    private var _binding: FragmentAboutBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        _binding = FragmentAboutBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -25,7 +27,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Tombol kembali ke dashboard
-        binding.toolbarProfile.setNavigationOnClickListener {
+        binding.toolbarAbout.setNavigationOnClickListener {
 
             parentFragmentManager.beginTransaction()
                 .replace(R.id.frameLayout, HomeFragment())
