@@ -1,4 +1,4 @@
-package com.example.falahal_wrold.Home.pertemuan9.pertemuan10
+package com.example.falahal_wrold.Home.pertemuan10
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -20,10 +20,6 @@ class TenthActivity : AppCompatActivity() {
         binding = ActivityTenthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // =========================
-        // SYSTEM BAR & TOOLBAR
-        // =========================
-
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
@@ -34,10 +30,6 @@ class TenthActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
-
-        // =========================
-        // TAB LAYOUT & VIEW PAGER
-        // =========================
 
         // 1. Inisialisasi Adapter
         val tabsAdapter = TenthTabsAdapter(this)

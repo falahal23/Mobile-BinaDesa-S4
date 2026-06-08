@@ -14,13 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FalahalWrold">
         <activity
-            android:name=".Home.pertemuan9.pertemuan10.TenthActivity"
+            android:name=".Message.tutorial.TutorialMessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Message.MessageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.falahal_wrold.Home.pertemuan10.TenthActivity"
             android:exported="false" />
         <activity
             android:name=".Home.pertemuan9.NinthActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan9.pertemuan7.SevenActivity"
+            android:name="com.example.falahal_wrold.Home.pertemuan7.SevenActivity"
             android:exported="false" /> <!-- ✅ SPLASH SCREEN (HALAMAN PERTAMA) -->
         <activity
             android:name=".SplashScreenActivity"
@@ -37,25 +43,25 @@
             android:name=".AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan9.pertemuan6.MainActivityBinaDesa"
+            android:name="com.example.falahal_wrold.Home.pertemuan6.MainActivityBinaDesa"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan9.pertemuan6.WebViewActivity"
+            android:name="com.example.falahal_wrold.Home.pertemuan6.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan9.pertemuan3.WelcomeActivity"
+            android:name="com.example.falahal_wrold.Home.pertemuan3.WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan9.pertemuan3.LoginActivity"
+            android:name="com.example.falahal_wrold.Home.pertemuan3.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan9.pertemuan4.Dashboard"
+            android:name="com.example.falahal_wrold.Home.pertemuan4.Dashboard"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan9.pertemuan4.Dashboard2"
+            android:name="com.example.falahal_wrold.Home.pertemuan4.Dashboard2"
             android:exported="false" />
         <activity
             android:name=".SettingsActivity"

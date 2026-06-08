@@ -1,4 +1,4 @@
-package com.example.falahal_wrold.Home.pertemuan9.pertemuan10;
+package com.example.falahal_wrold.Home.pertemuan10;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,8 +16,6 @@ public class TenthTabsAdapter extends FragmentStateAdapter {
         return 3;
     }
 
-    @NonNull
-    @Override
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:

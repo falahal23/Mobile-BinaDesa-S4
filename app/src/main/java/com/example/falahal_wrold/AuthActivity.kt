@@ -8,7 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.content.edit
 import com.example.falahal_wrold.databinding.ActivityAuthBinding
-import com.example.falahal_wrold.Home.pertemuan9.pertemuan6.MainActivityBinaDesa
+import com.example.falahal_wrold.Home.pertemuan6.MainActivityBinaDesa
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AuthActivity : AppCompatActivity() {

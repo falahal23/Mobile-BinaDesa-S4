@@ -1,4 +1,4 @@
-package com.example.falahal_wrold.Home.pertemuan9.pertemuan3
+package com.example.falahal_wrold.Home.pertemuan3
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AlertDialog
 import com.example.falahal_wrold.MainActivity
 import com.example.falahal_wrold.databinding.ActivityWelcomeBinding
-import com.example.falahal_wrold.Home.pertemuan9.pertemuan4.Dashboard
-import com.example.falahal_wrold.Home.pertemuan9.pertemuan4.Dashboard2
+import com.example.falahal_wrold.Home.pertemuan4.Dashboard
+import com.example.falahal_wrold.Home.pertemuan4.Dashboard2
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding

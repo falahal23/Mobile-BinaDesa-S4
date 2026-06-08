@@ -8,12 +8,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.falahal_wrold.R
 import com.example.falahal_wrold.databinding.ActivityNinthBinding
-import com.example.falahal_wrold.Home.pertemuan9.pertemuan7.AboutFragment
-import com.example.falahal_wrold.Home.pertemuan9.pertemuan7.ProfileFragment
+import com.example.falahal_wrold.Home.pertemuan7.AboutFragment
+import com.example.falahal_wrold.Home.pertemuan7.ProfileFragment
 import com.google.android.material.chip.Chip
 
 class NinthActivity : AppCompatActivity() {
@@ -194,13 +195,17 @@ class NinthActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.textProfile)
         )
 
-        menus.forEach { it.isSelected = false }
-        icons.forEach { it.isSelected = false }
-        texts.forEach { it.isSelected = false }
+        // Reset all to inactive state
+        for (i in menus.indices) {
+            menus[i].setBackgroundResource(0)
+            icons[i].setColorFilter(ContextCompat.getColor(this, R.color.text_sub))
+            texts[i].setTextColor(ContextCompat.getColor(this, R.color.text_sub))
+        }
 
-        selectedMenu.isSelected = true
-        selectedIcon.isSelected = true
-        selectedText.isSelected = true
+        // Set selected menu to active state
+        selectedMenu.setBackgroundResource(R.drawable.bg_footer_active)
+        selectedIcon.setColorFilter(ContextCompat.getColor(this, R.color.md_theme_primary))
+        selectedText.setTextColor(ContextCompat.getColor(this, R.color.md_theme_primary))
     }
 
     private fun showMainMenu(isShowing: Boolean) {

@@ -4,200 +4,206 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F9FF">
+    android:background="@color/md_theme_background">
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@id/footerInclude"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <!-- TOP FIXED HEADER -->
+    <View
+        android:id="@+id/headerBg"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/md_theme_primary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/fixedHeaderContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="30dp">
+            android:padding="24dp">
 
-            <!-- HEADER -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:background="#0B4F6C"
-                android:orientation="vertical"
-                android:padding="24dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PELAPORAN BENCANA"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sistem tanggap darurat desa"
-                    android:textColor="#D6EAF8"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:text="Laporkan Kondisi Darurat 🚨"
-                    android:textColor="@android:color/white"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bantu masyarakat dengan laporan cepat"
-                    android:textColor="#D6EAF8"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <!-- QUICK ACTIONS (GRID LAYOUT) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="24dp"
-                android:text="Aksi Cepat"
-                android:textColor="#2C3E50"
-                android:textSize="17sp"
+                android:text="PELAPORAN DARURAT"
+                android:textColor="#CCFFFFFF"
+                android:textSize="12sp"
+                android:letterSpacing="0.2"
                 android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Kirim Laporan Cepat 🚨"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi Anda membantu menyelamatkan nyawa"
+                android:textColor="#E3F2FD"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- CATEGORY CHIPS -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Jenis Kejadian"
+                    android:textColor="@color/md_theme_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupBencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:singleSelection="true">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBanjir"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        app:chipIconVisible="true"
+                        android:text="Banjir" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipGempa"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        app:chipIconVisible="true"
+                        android:text="Gempa" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipKebakaran"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        app:chipIconVisible="true"
+                        android:text="Kebakaran" />
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!-- SCROLLABLE FORM CONTENT -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/footerInclude"
+        app:layout_constraintTop_toBottomOf="@id/fixedHeaderContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
 
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="14dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
                 app:columnCount="2">
-
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnPosko"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="60dp"
                     app:layout_columnWeight="1"
                     android:layout_margin="4dp"
                     android:text="Cari Posko"
-                    android:textColor="#0B4F6C"
-                    app:backgroundTint="#EBF5FB"
-                    app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_home" />
-
+                    android:textColor="@color/md_theme_primary"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_home"
+                    app:strokeColor="@color/grey_soft" />
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnEvakuasi"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="60dp"
                     app:layout_columnWeight="1"
                     android:layout_margin="4dp"
-                    android:text="Jalur Evakuasi"
-                    android:textColor="#0B4F6C"
-                    app:backgroundTint="#EBF5FB"
-                    app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_warning" />
-
+                    android:text="Jalur Aman"
+                    android:textColor="@color/md_theme_primary"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_warning"
+                    app:strokeColor="@color/grey_soft" />
             </androidx.gridlayout.widget.GridLayout>
 
-            <!-- CATEGORY (CHIP GROUP) -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Kategori Bencana"
-                android:textColor="#2C3E50"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroupBencana"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                app:singleSelection="true">
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipBanjir"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkable="true"
-                    app:chipIconVisible="true"
-                    android:text="Banjir" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipGempa"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkable="true"
-                    app:chipIconVisible="true"
-                    android:text="Gempa" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipKebakaran"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkable="true"
-                    app:chipIconVisible="true"
-                    android:text="Kebakaran" />
-
-            </com.google.android.material.chip.ChipGroup>
-
-            <!-- REPORT FORM -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp">
-
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Formulir Laporan"
-                        android:textColor="#0B4F6C"
-                        android:textSize="18sp"
+                        android:text="Lengkapi Detail Laporan"
+                        android:textColor="@color/md_theme_primary"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
-
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:hint="Nama Pelapor">
-
+                        android:hint="Nama Pelapor"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusTopStart="16dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etNama"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <!-- ADDED BACK etJenisBencana to match NinthActivity.kt -->
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:hint="Jenis Bencana">
-
+                        android:hint="Jenis Kejadian"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusTopStart="16dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etJenisBencana"
                             android:layout_width="match_parent"
@@ -209,21 +215,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:hint="Lokasi">
-
+                        android:hint="Lokasi Kejadian"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusTopStart="16dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etLokasi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
-
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:hint="Keterangan">
-
+                        android:hint="Deskripsi Laporan"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusTopStart="16dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etKeterangan"
                             android:layout_width="match_parent"
@@ -232,40 +243,35 @@
                             android:inputType="textMultiLine"
                             android:minLines="3" />
                     </com.google.android.material.textfield.TextInputLayout>
-
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnKirimLaporan"
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:layout_marginTop="20dp"
-                        android:text="Kirim Laporan Sekarang"
-                        app:backgroundTint="#0B4F6C"
-                        app:cornerRadius="12dp" />
-
+                        android:layout_height="56dp"
+                        android:layout_marginTop="24dp"
+                        android:text="KIRIM LAPORAN SEKARANG"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/md_theme_primary"
+                        app:cornerRadius="16dp"
+                        app:elevation="4dp" />
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
     </ScrollView>
 
+    <!-- Added back fragmentContainer to match NinthActivity.kt -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/footerInclude"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
         android:id="@+id/footerInclude"
         layout="@layout/layout_footer"
-        android:layout_width="0dp"
-        android:layout_height="65dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F9FF"
-    tools:context=".Home.pertemuan9.pertemuan10.TenthActivity">
+    tools:context=".Home.pertemuan10.TenthActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -14,7 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#0B4F6C"
         android:elevation="4dp"
-        app:title="Pertemuan 10"
+        app:title="Logistik dan Posko"
         app:titleTextColor="@android:color/white"
         app:navigationIcon="@drawable/ic_back"
         app:navigationIconTint="@android:color/white"

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".Home.pertemuan9.pertemuan7.SevenActivity">
+    tools:context=".Home.pertemuan7.SevenActivity">
 
     <!-- HEADER -->
 
