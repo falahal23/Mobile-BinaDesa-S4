@@ -29,7 +29,9 @@ import com.example.falahal_wrold.Home.pertemuan10.TenthActivity
 import com.example.falahal_wrold.Home.pertemuan9.ListFragment
 import com.example.falahal_wrold.Home.pertemuan9.NinthActivity
 import com.example.falahal_wrold.Home.photo.PhotoAdapter
+import com.example.falahal_wrold.Note.NoteFormActivity
 import com.example.falahal_wrold.data.api.DisasterApiClient
+import com.example.falahal_wrold.data.api.PhotoApiClient
 import com.example.falahal_wrold.data.model.DisasterEventModel
 import com.example.falahal_wrold.data.model.PhotoModel
 import kotlinx.coroutines.launch
@@ -92,6 +94,10 @@ class MainActivityBinaDesa : AppCompatActivity() {
 
         binding.btnSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
+        }
+
+        binding.btnAddNote.setOnClickListener {
+            startActivity(Intent(this, NoteFormActivity::class.java))
         }
 
         binding.btnRefresh.setOnClickListener {
@@ -191,18 +197,43 @@ class MainActivityBinaDesa : AppCompatActivity() {
                     "Gagal mengambil info bencana. Cek koneksi internet lalu tekan Refresh."
             }
 
-            // 2. Tampilkan Gambar Bertema Bencana (Menggunakan Unsplash Source)
+            // 2. Tampilkan Gambar Bertema Bencana (Mengambil dari API di data/api)
             try {
-                val disasterPhotos = listOf(
-                    PhotoModel("1", "Kondisi Pasca Banjir", "https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=500"),
-                    PhotoModel("2", "Kebakaran Hutan", "https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=500"),
-                    PhotoModel("3", "Evakuasi Warga", "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=500"),
-                    PhotoModel("4", "Kerusakan Infrastruktur", "https://images.unsplash.com/photo-1580582282544-3382f168f638?q=80&w=500"),
-                    PhotoModel("5", "Tanah Longsor", "https://images.unsplash.com/photo-1511059345003-999330953c8c?q=80&w=500")
+                val photos = PhotoApiClient.apiService.getPhotos()
+                
+                // Daftar ID foto bencana yang sangat stabil dari Unsplash
+                val disasterImageIds = listOf(
+                    "1547683905-f686c993aae5", // Banjir
+                    "1542332213-31f87348057f", // Kebakaran
+                    "1469571486292-0ba58a3f068b", // Evakuasi
+                    "1527482797697-8795b05a13fe", // Badai
+                    "1511059345003-999330953c8c"  // Gempa/Tanah Retak
                 )
-                binding.rvGallery.adapter = PhotoAdapter(disasterPhotos)
+
+                val disasterPhotos = if (photos.isNotEmpty()) {
+                    photos.take(5).mapIndexed { index, photo ->
+                        val unsplashId = disasterImageIds[index % disasterImageIds.size]
+                        PhotoModel(
+                            id = photo.id,
+                            author = "Laporan: ${photo.author}",
+                            // Menggunakan URL CDN Unsplash yang sangat cepat dan stabil
+                            download_url = "https://images.unsplash.com/photo-$unsplashId?q=80&w=600"
+                        )
+                    }
+                } else {
+                    emptyList()
+                }
+                
+                if (disasterPhotos.isNotEmpty()) {
+                    binding.rvGallery.adapter = PhotoAdapter(disasterPhotos)
+                }
             } catch (exception: Exception) {
-                // Silently fail or log for gallery
+                // Fallback jika API gagal (menggunakan URL langsung Unsplash)
+                val fallbackPhotos = listOf(
+                    PhotoModel("101", "Kondisi Lokasi", "https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=500"),
+                    PhotoModel("102", "Evakuasi Pasca Bencana", "https://images.unsplash.com/photo-1511059345003-999330953c8c?q=80&w=500")
+                )
+                binding.rvGallery.adapter = PhotoAdapter(fallbackPhotos)
             } finally {
                 binding.btnRefresh.isEnabled = true
             }

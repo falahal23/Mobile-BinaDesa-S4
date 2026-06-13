@@ -99,13 +99,21 @@
                             android:inputType="textPassword"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnSignIn"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="24dp"
-                        android:text="PROSES"
-                        android:textStyle="bold"/>
+                        android:layout_height="56dp"
+                        android:layout_marginTop="32dp"
+                        android:text="MASUK KE SISTEM"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.02"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:backgroundTint="@color/md_theme_primary"
+                        app:cornerRadius="12dp"
+                        app:elevation="0dp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

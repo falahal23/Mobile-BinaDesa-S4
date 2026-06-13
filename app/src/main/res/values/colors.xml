@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Konsep Warna Biru Putih Modern -->
-    <color name="md_theme_primary">#2962FF</color> <!-- Biru Terang Modern -->
+    <!-- Tailwind-inspired Blue Theme -->
+    <color name="md_theme_primary">#2563EB</color> <!-- Blue 600 (The requested color) -->
     <color name="md_theme_onPrimary">#FFFFFF</color>
-    <color name="md_theme_secondary">#0091EA</color> <!-- Biru Muda -->
+    <color name="md_theme_secondary">#3B82F6</color> <!-- Blue 500 -->
     <color name="md_theme_onSecondary">#FFFFFF</color>
-    <color name="md_theme_error">#FF1744</color> <!-- Merah Terang unk Emergency -->
-    <color name="md_theme_background">#F0F4FF</color> <!-- Putih Kebiruan Lembut -->
+    <color name="md_theme_error">#EF4444</color> <!-- Red 500 -->
+    <color name="md_theme_background">#F8FAFC</color> <!-- Slate 50 (Very clean background) -->
     <color name="md_theme_surface">#FFFFFF</color>
 
-    <color name="status_safe">#00C853</color>
-    <color name="status_warning">#FFD600</color>
-    <color name="status_danger">#FF1744</color>
+    <color name="status_safe">#22C55E</color> <!-- Green 500 -->
+    <color name="status_warning">#F59E0B</color> <!-- Amber 500 -->
+    <color name="status_danger">#EF4444</color> <!-- Red 500 -->
 
     <!-- Legacy / Compatibility Colors -->
-    <color name="colorPrimary">#2962FF</color>
-    <color name="colorPrimaryDark">#0039CB</color>
-    <color name="colorAccent">#0091EA</color>
+    <color name="colorPrimary">#2563EB</color>
+    <color name="colorPrimaryDark">#1E40AF</color> <!-- Blue 800 -->
+    <color name="colorAccent">#3B82F6</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="grey_soft">#E3E8EE</color>
-    <color name="text_main">#121212</color>
-    <color name="text_sub">#616161</color>
+    <color name="black">#0F172A</color> <!-- Slate 900 -->
+    <color name="grey_soft">#F1F5F9</color> <!-- Slate 100 -->
+    <color name="text_main">#0F172A</color> <!-- Slate 900 -->
+    <color name="text_sub">#64748B</color> <!-- Slate 500 -->
 
-    <!-- Restoring other colors from build log -->
     <color name="marron">#800000</color>
-    <color name="blue_primary">#2962FF</color>
-    <color name="colorBackground">#F0F4FF</color>
+    <color name="blue_primary">#2563EB</color>
+    <color name="colorBackground">#F8FAFC</color>
     <color name="google_btn_bg">#F5F5F5</color>
-    <color name="birutua">#1A237E</color>
-    <color name="grey">#BDBDBD</color>
-    <color name="abu_gelap">#616161</color>
-    <color name="text_secondary">#757575</color>
-    <color name="colorTextSubtitle">#757575</color>
-    <color name="primary">#2962FF</color>
+    <color name="birutua">#1E3A8A</color> <!-- Blue 900 -->
+    <color name="grey">#94A3B8</color> <!-- Slate 400 -->
+    <color name="abu_gelap">#475569</color> <!-- Slate 600 -->
+    <color name="text_secondary">#64748B</color>
+    <color name="colorTextSubtitle">#64748B</color>
+    <color name="primary">#2563EB</color>
 </resources>

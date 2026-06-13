@@ -20,16 +20,16 @@ class PhotoAdapter(private val items: List<PhotoModel>) : RecyclerView.Adapter<P
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
         val item = items[position]
         
-        // Menampilkan judul yang sesuai dengan tema bencana
         holder.binding.tvTitle.text = item.author 
-        holder.binding.tvStatusBadge.text = "INFO TERKINI"
-        holder.binding.tvAuthor.text = "Sumber: Relawan Lapangan"
+        holder.binding.tvStatusBadge.text = "LAPORAN VISUAL"
+        holder.binding.tvAuthor.text = "Sumber: Relawan Desa"
         holder.binding.tvDate.text = "Baru saja"
         
         Glide.with(holder.itemView.context)
             .load(item.download_url)
-            .placeholder(android.R.drawable.ic_menu_gallery)
-            .error(android.R.drawable.stat_notify_error)
+            .centerCrop()
+            .placeholder(android.R.drawable.progress_horizontal)
+            .error(android.R.drawable.ic_menu_report_image)
             .into(holder.binding.imgPhoto)
     }
 
